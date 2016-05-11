@@ -6,11 +6,12 @@ import { createStore, applyMiddleware } from 'redux'
 import ReduxPromise from 'redux-promise'
 
 import reducers from './reducers'
+import routes from './routes'
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore)
 
 ReactDOM.render(
 	<Provider store={createStoreWithMiddleware(reducers)}>
-		<Router history={browserHistory}/>
+		<Router history={browserHistory} routes={routes} />
 	</Provider>
 ,document.getElementById('app'))
