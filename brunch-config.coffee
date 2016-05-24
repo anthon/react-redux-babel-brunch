@@ -1,5 +1,9 @@
 exports.config =
 
+	modules:
+		autoRequire:
+			'js/app.js': ['scripts/index']
+
 	conventions:
 		ignored: [
 			/[\\/]_/,
