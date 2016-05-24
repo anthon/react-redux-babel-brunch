@@ -2,7 +2,7 @@
   "name": "wunderkammer",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "scripts/index.js",
   "scripts": {
     "start": "NODE_ENV=development ./node_modules/brunch/bin/brunch watch -s",
     "build": "brunch build",

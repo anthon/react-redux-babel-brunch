@@ -9,7 +9,7 @@ exports.config =
 	files:
 		javascripts:
 			joinTo:
-				'js/app.js': /^(app|node_modules)/
+				'js/app.js': /^(app\/scripts|node_modules)/
 				# 'js/vendor.js': /^node_modules/
 
 		stylesheets:
@@ -17,7 +17,7 @@ exports.config =
 				'css/main.css': /^app\/styles/
 
 	paths:
-		public: 'client'
+		public: '../../public'
 
 	sourceMaps: false
 
