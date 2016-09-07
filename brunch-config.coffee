@@ -14,14 +14,13 @@ exports.config =
 		javascripts:
 			joinTo:
 				'js/app.js': /^(app\/scripts|node_modules)/
-				# 'js/vendor.js': /^node_modules/
 
 		stylesheets:
 			joinTo:
 				'css/main.css': /^app\/styles/
 
 	paths:
-		public: '../../public'
+		public: '../public'
 
 	sourceMaps: false
 
