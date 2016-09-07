@@ -14,8 +14,8 @@ const store = setupStore()
 const history = syncHistoryWithStore(browserHistory, store)
 
 ReactDOM.render(
-	<Provider store={createStoreWithMiddleware(reducers)}>
-		<Router history={browserHistory} routes={routes} />
+	<Provider store={store}>
+		<Router history={history} routes={routes} />
 	</Provider>
 ,document.getElementById('app'))
 
