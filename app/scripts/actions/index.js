@@ -1,16 +1,37 @@
-import axios from 'axios'
+import * as api from '../api'
 
-const API_KEY = 'b1f6f24bc92335a9025c415fe9743dda'
-const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`
+export const REQUEST_PAGE = 'request_page'
+export const RECEIVE_PAGE = 'receive_page'
+export const fetchData = (query)=> (dispatch,getState) => {
+	dispatch(requestData())
+	return api.fetchData(query).then( response => {
+		dispatch(receiveData(response))
+	}, error => {
+		console.error(error)
+	})
+}
+const requestData = ()=> ({
+	type: REQUEST_PAGE
+})
+const receiveData = data => ({
+	type: RECEIVE_PAGE,
+	payload: data
+})
 
-export const FETCH_WEATHER = 'fetch_weather'
-
-export function fetchWeather(term) {
-	const url = `${ROOT_URL}&q=${term},us`
-	const request = axios.get(url)
-
+export const ADD_APP_CLASS = 'add_app_class'
+export const addAppClass = (className)=> {
+	if(className.constructor !== Array) className = [className]
 	return {
-		type: FETCH_WEATHER,
-		payload: request
+		type: ADD_APP_CLASS,
+		payload: className
+	}
+}
+
+export const REMOVE_APP_CLASS = 'remove_app_class'
+export const removeAppClass = (className)=> {
+	if(className.constructor !== Array) className = [className]
+	return {
+		type: REMOVE_APP_CLASS,
+		payload: className
 	}
 }
