@@ -20,7 +20,7 @@ exports.config =
 				'css/main.css': /^app\/styles/
 
 	paths:
-		public: '../public'
+		public: '../../public'
 
 	sourceMaps: false
 
