@@ -20,7 +20,7 @@ exports.config =
 				'css/main.css': /^app\/styles/
 
 	paths:
-		public: '../../public'
+		public: '../public'
 
 	sourceMaps: false
 
@@ -29,7 +29,7 @@ exports.config =
 
 	plugins:
 		babel:
-			presets: ['es2015','react','stage-0']
+			presets: ['env']
 			pattern: /\.(js|jsx)$/
 		autoReload:
 			enabled:
@@ -43,8 +43,8 @@ exports.config =
 		production:
 			optimize: false
 			sourceMaps: false
-			paths:
-				public: 'client-production'
+			# paths:
+			# 	public: 'client-production'
 			plugins:
 				autoReload:
 					enabled: false
