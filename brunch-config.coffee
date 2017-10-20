@@ -29,7 +29,7 @@ exports.config =
 
 	plugins:
 		babel:
-			presets: ['env']
+			presets: ['env','react','stage-0']
 			pattern: /\.(js|jsx)$/
 		autoReload:
 			enabled:
